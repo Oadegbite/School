@@ -1,0 +1,26 @@
+0. My number is: XXXX
+1. My tree has 21 nodes. Its height is 6.
+   Note: the tree itself is in file htree.jpg and can be opened at:
+   http://www.scs.ryerson.ca/~dwoit/courses/cps305/coursedirPublic305/Labs/Lab07/htree.jpg
+2. A student will only have the one encoding, corresponding to the number in part 0.
+   1. 10111111110110100001101101110110010101001
+   2. 100011011010011101100001111011111010101110
+   3. 11110011100101010111011011000110000
+   4. 110011110000100111011010101110101111
+   5. 1100111110110110100001010101111101110
+   6. 110011110110100110000100011011101010
+   7. 111100001011111101110010101011010001
+   8. 10000101010110100111011011101100
+   9. 11001101100001001101010110101110
+
+3. A student will only have the one phase, corresponding to the number in part 0.
+   1. the_hardnosed_antihero_has_a_hairnet
+   2. a_tarnished_honda_sedan_dashes_ahead
+   3. the_honest_hen_shared_her_danish
+   4. shade_hinders_tans_in_the_north
+   5. the_horse_trainer_shortens_the_reins
+   6. nerd_heros_donate_trained_drones
+   7. the_rodents_dined_on_roasted_radishes
+   8. ornate_rhino_horns_adorn_their_shirts
+   9. asteroids_rained_on_stone_shores
+

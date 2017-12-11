@@ -1,0 +1,84 @@
+Lab 03
+------
+
+int find (int item, int *A, int max_index) {
+
+  if (max_index < 0 ) return -1; //not found
+  if (item==A[max_index]) return max_index;
+  else return find(item,A,max_index-1);
+
+}
+
+Question 1:
+
+S(0)= k, where k is: space for the find function call and variables 
+                     item, A, max_index
+S(n)= k + S(n-1) 
+
+   Note: 
+   We use S(0) for base case because there is NO comparison (zero 
+   comparisons) of item against elements of A in the base case.
+
+Question 2:
+
+Unroll. 
+
+S(n) =  k + S(n-1)
+     =  k + k + S(n-2)           = 2k + S(n-2)
+     =  k + k + k + S(n-3)       = 3k + S(n-3)
+     =  k + k + k + k + S(n-4)   = 4k + S(n-4)
+       .
+       .
+       .
+                                 = nk + S(n-n) 
+                                 = nk + S(0) 
+                                 = nk + k
+     Giving O(n) space  
+
+
+-----------------------------------------------------------------
+If you finish this lab early, work on the following problems:
+
+1. 
+   When the item is found in position max_index.
+   A base case is encountered on the first call, so only k space is used.
+
+2. 
+   When the item is found in position 0.
+   Each index from max_index down to 0 must be checked: 
+   max_index, max_index-1, max_index-2, ... 1, 0.
+   This gives a total of n= (max_index+1) indexes.
+
+   This is another recurrence relation
+   S(1) =  k
+   S(n) =  k + S(n-1)
+        = 2k + S(n-2)
+        = 3k + S(n-3)
+        = ...
+        = (n-1)k + S(n-(n-1))
+        = (n-1)k + S(1)
+        = (n-1)k + k
+	= kn 
+   Thus S(n) is O(n)
+
+3. 
+
+   Must take average of item being found at index:
+      max_index, max_index-1, max_index-2, ... 1, 0
+
+   at index max_index:   S(n) =  k (base case on first  call to find--from main)
+   at index max_index-1: S(n) = 2k (base case on second call to find--main, find, find)
+   at index max_index-2: S(n) = 3k (base case on third  call to find--main,find,find,find)
+
+   ...
+   at index 0 : S(n) = (max_index+1)k (base case on max_index+1th call to find)
+
+   For average, sum all up and divide by how many there were:
+   k + 2k + 3k + ... (max_index+1)k
+   --------------------------------
+       (max_index+1)
+ 
+   = k (1+2+... (max_index+1)) / (max_index+1)
+   = k (max_index+1)(max_index+2) / 2 (max_index+1)
+   = k (n)(n+1)/2n = k(n+1)/2 = k/2 (n) + k/2
+   Thus O(n)

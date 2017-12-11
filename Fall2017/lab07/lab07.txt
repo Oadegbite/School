@@ -1,0 +1,83 @@
+Lab 07
+-------
+
+0.  Consider the first letter of your CS userid (login name).
+    Use this letter to determine your NUMBER for this lab as follows:
+    First Letter of Userid  Number
+    ----------------------  ------
+    a,b,c                   1
+    d,e,f                   2
+    g,h,i                   3
+    j,k,l                   4
+    m,n,o                   5
+    p,q,r                   6
+    s,t                     7
+    u,v,w                   8
+    x,y,z                   9
+ 
+    File lab07answers.txt is GIVEN. Copy it to your filespace, and complete
+    it by replacing XXXX with the correct answer for each question.
+
+1.  Consider an alphabet containing only the following 11 characters,
+    with the given frequencies:
+    Char Freq
+    ---- ----
+    _    99 (the underscore character)
+    a    10
+    d    9
+    e    8
+    h    7
+    i    6
+    n    5
+    r    4  (choose r before 0 when making tree)
+    o    4
+    s    2
+    t    1
+
+   Construct a huffman tree for the alphabet using the method from T-22 in 
+   class notes, as follows. When pairing 2 items, the one with the smaller 
+   frequency goes on the left, and its arc has label 1. If two items with
+   the SAME frequency are being paired, then this is how you must determine
+   which one goes on the left:
+    -if both items are characters in the alphabet above, then the one that
+     is smaller, in alphabetical order, as given above, goes on the left. 
+    -if one is a character of the alphabet, and the other is a created node, 
+     then the character goes on the left
+    -if both are created nodes, then the one was the one created first goes
+     on the left.
+   If you are trying to choose between 2 items on the list which have the
+   same frequency, choose this one:
+    -the one that existed on the list first (e.g., if one is a character of
+     the alphabet, and one is a created node, choose the character first).
+   
+  
+
+   How many nodes does your Huffman tree have? What is your tree's height?
+
+2. Give the encoding for the word that corresponds to your NUMBER, which
+   you found in question 0. 
+   
+   1. tarnished
+   2. ordinates
+   3. adhesion
+   4. handiest
+   5. hairnets
+   6. hardnose
+   7. antihero
+   8. nerdish
+   9. hinders
+
+3. Find the phrase that corresponds to your NUMBER by decoding the code
+   that corresponds to your NUMBER.
+   1. 1011111100101001100111101101001100001000110111010101001011110000101111110111001010101101000101100111101110011101100111110110110100001010101111
+   2. 11101011111111011010000110110111011001010100101100100011000010011110101110101010011111000001001111101110110010101011100111110010101111001
+   3. 1011111100101001100100011000010101011101011110110010101000001011101100111101101010100101100101010110010011111000011011011101100
+   4. 101110110011110011010011001101100001001101010110101110010111111110000101110011011000001011111100101001000010001101101011111100
+   5. 10111111001010011001000110110101110101001011111011011111011000010101011001011101100100011011010111110101000010111001011111100101001011010101101100001011100
+   6. 10000101010110100101100101010110100011011100100110001100001111011111010010111110110111110110000101010010100110110100011000010101011100
+   7. 10111111001010010110100011001101010000101111101110010011101100001010100101000110000010110100011111011101011111010100101011011110011101101110110010101011100
+   8. 1000110110100001111011111010010110110011011000010001011001000110110100001011100111100110001101101000001011111100101011011011001011101100110110110101111101110
+   9. 111101110101111101010110100011101100110111001011011111011000010101001010001100000101110101111100011000010100101110110010001101101010101110
+
+
+

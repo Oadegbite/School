@@ -1,0 +1,78 @@
+Lab 06
+-------
+
+Understand B-trees from class, including insertion and deletion.
+
+In the B-tree below, to indicate X and Y are IN THE SAME NODE, 
+we use notation:
+        X-Y or X--Y or X---Y etc.
+
+
+
+                     I---N
+                   /   |    \
+                  /    |     \
+                 /     |      \
+                /      |       \
+               /       |        \
+              /        |         \
+            D          K           Q
+           / \        / \         / \
+          /   \      /   \       /   \
+        A-B   E-G   J     M     P   S--T
+
+
+A LEVEL-ORDER traversal of the above B-tree is:
+I.N.D.K.Q.A.B.E.G.J.M.P.S.T
+
+Q0: 
+    Do a level-order traversal of the tree at the bottom of page:
+    http://www.scs.ryerson.ca/~dwoit/courses/cps305/coursedirPublic305/NOTES/trees/T17.gif
+    Use a dot between keys, as above.
+
+TRY THE TRAVERSAL FIRST, then... 
+Check your solutionis : 
+     10.20.5.7.15.30.57.2.6.8.9.11.17.25.29.40.59
+
+
+
+For all remaining questions:
+  -Once the insertion/deletion is complete, do a level-order traversal 
+   of the resulting tree, putting a dot between keys like above.
+
+Q1:
+  Do an level-order traversal of the 2-3 tree (B-Tree order 3) in:
+  http://www.scs.ryerson.ca/~dwoit/courses/cps305/coursedirPublic305/NOTES/trees/BTree1.jpg
+
+  TRY THE TRAVERSAL FIRST,  then... 
+  Check your solutionis : 
+    50.30.41.70.90.10.20.34.37.47.60.80.97.100
+
+Q2:
+  Insert 95 into the 2-3 tree (B-Tree order 3) in:
+  http://www.scs.ryerson.ca/~dwoit/courses/cps305/coursedirPublic305/NOTES/trees/BTree1.jpg
+  Use "rotation with sibling" WHEN POSSIBLE; otherwise use node splitting (push up to parent). 
+  THEN, insert 93 into the resulting B-tree.
+  Use "rotation with sibling" WHEN POSSIBLE; otherwise use node splitting (push up to parent). 
+
+
+Q3: 
+  Delete 70 from the ORIGINAL 2-3 tree (B-Tree order 3) in:
+  http://www.scs.ryerson.ca/~dwoit/courses/cps305/coursedirPublic305/NOTES/trees/BTree1.jpg
+  Do the deletion using the method described in class--but you must use the inorder PREDECESSOR
+  as the replacement key. (see below for more on inorder predecessor).
+
+Q4: 
+  Delete 70 from the ORIGINAL 2-3 tree (B-Tree order 3) in:
+  http://www.scs.ryerson.ca/~dwoit/courses/cps305/coursedirPublic305/NOTES/trees/BTree1.jpg
+  Do the deletion using the method described in class--but you must use the inorder SUCCESSOR
+  as the replacement key. (see below for more on inorder successor).
+
+------------------------------------------------------------------------
+INORDER PREDECESSOR/SUCCESSOR:
+As discussed in class...
+One way to find the inorder predecessor/successor of key X:
+  -Print all the keys of the tree in order (sorted). i.e., do an inorder traversal. 
+  -X's inorder predecessor is the key that is printed JUST BEFORE X.
+  -X's inorder successor   is the key that is printed JUST AFTER X.
+

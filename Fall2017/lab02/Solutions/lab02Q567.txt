@@ -1,0 +1,35 @@
+5.
+   Here is the function: At each line, it says what we're counting for that line
+   THE IMPORTANT THING IS THAT WE COUNT EACH OF the: +, -, =, <=, >, and loop-overhead
+   In this example, we will let the "loop overhead" include the =, <=, ++, >, -- in the 
+   for loop, so we won't count them separately.
+
+     int large(int q) {
+       //ASSUME q>0 always
+       int x=q;                //counting "=" (A)
+       int y=q;                //counting "=" (A)
+       int i;
+       int j;
+       for (i=1;i<=q;i++) {   //counting for-loop overhead (B)
+          x=q-i;              //counting "=" and "-" (C) (D)
+          for (j=q;j>0;j--) { //counting for-loop overhead (E)
+            y=y+x;            //counting "=" and "+" (F) (G)
+          }
+       }
+       return (x+y);          //counting "+" (H)
+     }
+
+
+6.
+  Calculating and showing work:
+   We will sum together all the things counted above. We might COMBINE things
+   immediately, or we might list each thing separately and gather like terms.
+   It will vary by student. It might go something like:
+    f(n) = 2A + n(B+C+D+ n(E+F+G)) + H
+
+  Final version something like: 
+    f(n) = k1*n^2 + k2*n + k3   (might have ks in reverse--OK)
+   
+7.
+   Time complexity in Big-O notation: O(n^2)
+

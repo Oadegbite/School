@@ -1,0 +1,38 @@
+
+2. Because the number (b-a) is the size of the string that the function works with.
+   i.e., The while loop iterates over that substring--not the entire array.
+
+3. 
+   Here is the function: At each line, it says what we're counting for that line
+   THE IMPORTANT THING IS THAT WE COUNT EACH OF THE: =, <, [], ++, --, loop-overhead
+
+    void revS(char *S, int a, int b) {
+      int i,j;
+      i=a;                      //counting "="
+      j=b;                      //counting "="
+      char temp;
+      while (i<j) {             //counting "<" and while-loop overhead  
+         temp=S[i];             //counting "=" and []
+         S[i]=S[j];             //counting "=" and both []
+         S[j]=temp;             //counting "=" and []
+         i++;                   //counting "++"
+         j--;                   //counting "--"
+      }
+    }
+
+
+  Calculating complexity:
+   Sum together all the things counted above. You  might COMBINE things
+   immediately, or might list each thing separately and gather like terms later.
+ 
+   It will vary by student. It might go something like:
+   Let "=" and "<" and "[]" and "++" and "--" be A, B, C, D, E
+   Then sum:
+        2A + x(3A+4C+D+E+loop overhead) + (x+1)B , where x is n/2
+   Then collect terms and simplify, giving:
+        f(n) = K1n + K2
+       
+    
+4. 
+  Time complexity in Big-O notation is O(n)
+

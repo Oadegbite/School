@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "OpenAddrHash.h"
-int tcolls;
 
 int h(KeyType K) {
 	return K%M;
@@ -18,18 +17,15 @@ void LookFor(Table T, KeyType K) {
 
 int main(void) {
 	int found;
-	tcolls=0;
 	Table T;
 	InitializeTable(T);
-	HashInsert(T,9, 'a',&tcolls);
-	HashInsert(T,61,'b',&tcolls);
-	HashInsert(T,95,'c',&tcolls);
-	HashInsert(T,78,'d',&tcolls);
-	HashInsert(T,44,'e',&tcolls);
+	HashInsert(T,9, 'a');
+	HashInsert(T,61,'b');
+	HashInsert(T,95,'c');
+	HashInsert(T,78,'d');
+	HashInsert(T,44,'e');
 	PrintTable(T);
 	LookFor(T,44);
 	LookFor(T,58);
-	printf("%d\n",tcolls);
-	LoadFactor(T);
 	return 0;
 }

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "OpenAddrHash.h"  
+#include "OpenAddrHash.h"
 
 
 void InitializeTable(Table T) {
@@ -7,17 +7,32 @@ void InitializeTable(Table T) {
   for (i=0;i<M;i++) T[i].Key=EmptyKey;
 }
 
+void LoadFactor(Table T)
+{
+  float loadF;
+  int emp = 0;
+  for (int i = 0; i <M; i++)
+  {
+    if(T[i].Key != EmptyKey) emp += 1;
+  }
+  loadF = (float)emp/M;
+  printf("Entries: %d\n", emp);
+  printf("Load factor: %0.2f\n", loadF);
+}
+
 void PrintTable(Table T) {
   int i;
   printf("\nTable:\n");
   for (i=0;i<M;i++) {
 	  printf("Slot %4d: Key: %4d ",i,T[i].Key);
-	  if (T[i].Key != EmptyKey) printf("Info: %c",T[i].Info);
-	  printf("\n");
+	  if (T[i].Key != EmptyKey)
+    {
+      printf("Info: %c",T[i].Info);
+    }printf("\n");
   }
 }
 
-void HashInsert(Table T, KeyType K, InfoType I) {
+void HashInsert(Table T, KeyType K, InfoType I, int *b) {
   int i;
   int ProbeDecrement;
   i=h(K);
@@ -25,6 +40,7 @@ void HashInsert(Table T, KeyType K, InfoType I) {
 
   while (T[i].Key != EmptyKey) {
 	  i-=ProbeDecrement;
+    *b += 1;
 	  if (i<0) i+=M;
   }
   T[i].Key = K;
@@ -48,5 +64,3 @@ int HashSearch(Table T, KeyType K) {
 	if (ProbeKey == EmptyKey)  return -1;
 	else return i;
 }
-
-

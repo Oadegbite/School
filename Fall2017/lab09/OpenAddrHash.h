@@ -11,10 +11,10 @@ typedef struct {
 
 typedef TableEntry Table[M];
 
-int p(KeyType); 
-int h(KeyType); 
+int p(KeyType);
+int h(KeyType);
 void InitializeTable(Table T);
 void PrintTable(Table T);
-void HashInsert(Table T, KeyType K, InfoType I);
+void HashInsert(Table T, KeyType K, InfoType I,int *b);
 int HashSearch(Table T, KeyType K);
-
+void LoadFactor(Table T);

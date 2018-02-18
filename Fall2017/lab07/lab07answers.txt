@@ -1,4 +1,0 @@
-0. My number is: XXXX
-1. My tree has XXXX nodes. Its height is XXXX.
-2. XXXX
-3. XXXX

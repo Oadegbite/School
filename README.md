@@ -1,3 +1,1 @@
-First commit fall 2017
-
-
+Schoool assignments

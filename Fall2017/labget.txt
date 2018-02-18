@@ -1,2 +1,0 @@
-scp -r oadegbit@moon.scs.ryerson.ca:/usr/courses/cps305/labs/lab07 .
-
